@@ -77,9 +77,10 @@ def download_from_s3(filename):
             bucket.upload_file(ofoldername + '/' + filename, 'Output/' + filename)
             #print(filename)
         print("Upload Successful")
-        os.rmdir(ifoldername)
-        os.rmdir(ofoldername)
-        
+        import shutil
+        shutil.rmtree(ifoldername)
+        shutil.rmtree(ofoldername)  
+    
     except botocore.exceptions.ClientError as e:        
         if e.response['Error']['Code'] == "404":
             print("The object does not exist.")
