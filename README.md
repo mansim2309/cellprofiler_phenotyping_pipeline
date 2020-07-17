@@ -1,3 +1,4 @@
+# -- BELOW STEPS ARE TO START A FARGATE CLUSTER --
 ## 1. Created a Dockerfile that had all the dependencies to run python3 and cellprofiler -> Dockerfile_cellprofiler (/home/ec2-user/docker)
 
 ## 2. Created an docker image from the above Dockerfile: docker build - < Dockerfile_cellprofiler
@@ -22,3 +23,15 @@
     #### (i) The code will read the dockerimage supplied to Fargate and automatically spin the number of workers requested. In our case, min of 10 and max 100. 
     #### (ii) Fargate internally runs docker on each of the workers that will execute the code and save the results 
     #### (iii) View the results directly on S3.
+
+
+# -- BELOW STEPS ARE TO UNDERSTAND FOLDER STRUCTURE --
+## 1. cellprofiler_pipeline: contains the pipeline to run user cellprofiler
+
+## 2. logs: sample logs generated while running code in multiprocessing
+
+## 3. resources: Dockerfile and Makefile
+
+## 4. visualizations: input, output and code to create visualizations for cell and image characteristics
+
+## 5. scripts: all of the scripts that are a part of this project to process phenotyping images
