@@ -8,8 +8,7 @@ import skimage.io
 from PIL import Image
 import time
 
-ACCESS_KEY = 'AKIAXDHAIW77BMWXFAVM'
-SECRET_KEY = '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'
+#input code here for fetching access key and secret key
 bucket = 'theriotbucket'
 #s3_client = boto3.client('s3', aws_access_key_id=ACCESS_KEY, aws_secret_access_key=SECRET_KEY)
 time_download = []
